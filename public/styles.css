@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+*{
+    font-family: 'VT323', monospace;
+    font-size: xx-large;
+}
+
+body{
+    margin: 0;
+    overflow: hidden;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.modal{
+    width: 600px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    background-color: #0aad02;
+    padding: 10px;
+}
+
+form input[type=submit]{
+    background-color: #bb3333;
+}
+
+.button-container button{
+    border: none;
+    color: #ffffff;
+    padding: 5px;
+    background-color: #0aad02;
+}
+.button-container button.not-active{
+    background-color: #808080;
+}
+
+.hidden{
+    display: none;
+}
+
+.info-container{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: right;
+}
+
+h3{
+   color: #ffffff; 
+   margin: 2px;
+}
+
+h1{
+    color: #ffffff;
+    margin: 15px;
+    font-size: 50px;
+}
+#score-value {
+    font-size: 50px;
+}
+
+.lose-container, .menu-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 1px solid #ffffff;
+    background-color: #000000;
+    padding: 40px;
+}
+
+.button{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: #0aad02;
+    color: white;
+    font-size: 30px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.button:hover {
+    background-color: #1a8814;
+}
+
+.win-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 1px solid #ffffff;
+    background-color: #000000;
+    padding: 40px;
+    margin-bottom: 10px;
+}
+
+.validation{
+    font-size: 25px;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Styling for the switch container */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Styling for the slider (the round part) */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: 0.4s;
+  }
+  
+  /* Round style for the slider */
+  .round {
+    border-radius: 50%;
+  }
+  
+  /* Styling for the checkbox when it's checked */
+  input[type="checkbox"]:checked + .slider {
+    background-color: #2196F3;
+  }
+  

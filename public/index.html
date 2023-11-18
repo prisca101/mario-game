@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <canvas id="mario-walk" width="120px" height="34px"></canvas> -->
+
+</head>
+<body>
+
+    <div id="modal" class="modal">
+        <div class="button-container">
+            <button onclick="toggleModal(event)" id="sign-up-button">Sign Up</button>
+            <button onclick="toggleModal(event)" id="sign-in-button" class="not-active">Sign In</button>
+        </div>
+
+        <form onsubmit="sign_up(event)" id="sign-up-form">
+            <label for="sign-up-email">Email</label>
+            <input type="email" id="sign-up-email" placeholder="example@email.com" required>
+            <div id="email-validation" class="validation"></div>
+
+            <label for="sign-up-password">Password</label>
+            <input onchange="validatePassword()" type="password" id="sign-up-password" pattern=".{6,}" placeholder="password" required>
+            <div id="password-validation" class="validation"></div>
+
+            <label for="sign-up-username">Username</label>
+            <input type="text" id="sign-up-username" placeholder="username" required>
+            <br>
+
+            <input type="submit" value="Sign Up">
+        </form>
+
+        <form onsubmit="sign_in(event)" id="sign-in-form" class="hidden">
+            <div id="login-validation" class="validation"></div>
+            <label for="sign-in-email">Email</label>
+            <input type="email" id="sign-in-email" placeholder="example@email.com" required>
+
+            <label for="sign-in-password">Password</label>
+            <input type="password" id="sign-in-password" pattern=".{6,}" placeholder="password" required>
+            <br>
+
+            <input type="submit" value="Sign In">
+        </form>
+
+    </div>
+
+    <div class="info-container">
+        <button onclick="logout()" id="logout-button" class="hidden">Logout</button>
+        <button onclick="toggleMenu()" id="menu-button" class="hidden">Menu</button>
+        <h3 id="username"></h3>
+        <h3 id="highscore-tag" class="hidden">Highscore: <span id="highscore"></span></h3>
+    </div>
+
+    <div id="menu-container" class="menu-container hidden">
+        <h1 id="menu-title">Mario Game</h1>
+        <button id="level1" class="button level">Level 1</button>
+        <button id="level2" class="button level">Level 2</button>
+        <button id="level3" class="button level">Level 3</button>
+        <button id="level4" class="button level">Level 4</button>
+    </div>
+    
+    <div id="lose-container" class="lose-container hidden">
+        <h1 id="score">Score: <span id="score-value">0</span></h1>
+        <button id="restart-button" class="button">Restart</button>
+    </div>
+
+    <div id="win-container" class="win-container hidden">
+        <h1>Congratulations, you have finished the game!</h1>
+        <h3 id="final-score">Final score: <span id="final-score-value">0</span></h1>
+        <button id="restart-button2" class="button">Restart</button>
+    </div>
+
+    <script src="https://kaboomjs.com/lib/0.5.0/kaboom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@11.0.0"></script>
+    <script src="game.js"></script>
+</body>
+</html>
